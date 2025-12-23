@@ -1,0 +1,25 @@
+
+{   "resourceType": "Location",
+    "status": "active",
+    "id": "location001",
+    "name": "Centro de consultas",
+    "type": [
+        {   "coding": [
+                {   "system": "http://terminology.hl7.org/CodeSystem/service-type",
+                    "code": "382", 
+                    "display": "Medical Services"
+                }
+            ],
+            "text": "Centro consultas médicas"
+        }
+    ],
+    "address": {
+        "line": [ "Avda. de Reina Mercedes, 30" ],
+        "city": "Sevilla", "postalCode": "41005", "country": "España"
+    },
+    "managingOrganization": {
+        "reference": "Organization/organization001",
+        "display": "Clinica de Atención Sanitaria"
+    }
+}
+

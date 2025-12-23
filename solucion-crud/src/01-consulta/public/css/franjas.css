@@ -1,0 +1,19 @@
+/* franjas.css */
+
+/* Estilos para la página de listado de las franjas (slots ) de la agendas */
+
+
+.contenido-franjas {
+
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    .lista-franjas {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 0.9rem;
+    }
+
+}

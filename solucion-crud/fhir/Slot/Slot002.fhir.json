@@ -1,0 +1,12 @@
+{
+  "resourceType": "Slot",
+  "id": "Slot002",
+  "schedule": {
+    "reference": "Schedule/Schedule001" 
+  },
+  "status": "free", 
+  "start": "2025-12-12T10:30:00Z", 
+  "end": "2025-12-12T11:00:00Z" 
+}
+
+

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+    <%- include("../../partials/head.ejs") %>
+    <title>Ejercicio CRUD</title>
+    <link rel="stylesheet" href="../../css/main.css">
+    <link rel="stylesheet" href="../../css/franjas.css">
+</head>
+<body>
+    <%- include("../../partials/cabecera.ejs", { titulo: "Alta de Franja" }) %>
+    <%- include("../../partials/menu.ejs") %>
+    <main class="contenido-principal contenido-alta-franjas">
+        <form class="form-alta-franja" action="/Franjas/alta" method="POST">
+            <div class="form-alta-franja__grupo">
+                <label class="form-alta-franja__label" for="inicio">Inicio:</label>
+                <input class="form-alta-franja__input" type="datetime-local" id="inicio" name="inicio" required>
+            </div>
+            <div class="form-alta-franja__grupo">
+                <label class="form-alta-franja__label" for="fin">Fin:</label>
+                <input class="form-alta-franja__input" type="datetime-local" id="fin" name="fin" required>
+            </div>
+            <button class="form-alta-franja__boton" type="submit">Enviar</button>
+        </form>
+    </main>
+</body>
+</html>

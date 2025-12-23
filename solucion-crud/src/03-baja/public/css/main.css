@@ -1,0 +1,68 @@
+/* main.css */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-fondo: hsl(120, 12%, 97%);
+  --color-fondo-secundario: hsl(180, 31%, 95%);
+  --color-primario: hsl(207, 83%, 51%);
+  --color-texto-primario: hsl(0, 0%, 100%);
+  --color-secundario: hsl(207, 83%, 31%);
+  --color-texto-secundario: hsl(0, 10%, 85%);
+
+  --color-borde: hsl(221, 88%, 27%);
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--color-fondo);
+  
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+
+.cabecera-principal {
+  padding: 1.5rem;
+  background-color: var(--color-secundario);
+  color: var(--color-texto-secundario);
+
+  .titulo {
+    font-size: 1.3rem;
+    text-transform: uppercase;
+  }
+}
+
+.menu-principal {
+  padding: 0  1.2rem;
+  .menu {
+    list-style: none;
+    display: flex;
+
+    gap: 1rem;
+
+    .menu__item {
+
+      background-color: var(--color-primario);
+      padding: 0.5rem 0.9rem;
+
+      .menu__enlace {
+        text-decoration: none;
+        color: var(--color-texto-primario);
+      }
+    }
+  }
+
+} 
+
+.contenido-principal {
+  border-top: 2px solid var(--color-borde);
+  padding: 1rem;
+  flex-grow: 1;
+  background-color: var(--color-fondo-secundario);
+}

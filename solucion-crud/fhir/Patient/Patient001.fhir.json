@@ -1,0 +1,36 @@
+{
+    "resourceType": "Patient",
+    "id": "patient001",
+    "name": [
+        {
+            "use": "official",
+            "family": "Severo",
+            "given": ["Doliente"]
+        }
+    ],
+    "gender": "male",
+    "address": [
+        {
+            "use": "home",
+            "line": ["Sierpes 1"],
+            "city": "Sevilla",
+            "postalCode": "41004",
+            "country": "España"
+        }
+    ],
+    "birthDate": "1964-05-15",
+    "telecom": [
+        {
+            "system": "phone",
+            "value": "2345678",
+            "use": "home"
+        },
+        {
+            "system": "email",
+            "value": "severo.dolientes@mail.com"
+        }
+    ],
+    "managingOrganization": {
+        "reference": "Organization/organization001"
+    }
+}

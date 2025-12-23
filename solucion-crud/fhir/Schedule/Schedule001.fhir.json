@@ -1,0 +1,39 @@
+{
+  "resourceType": "Schedule",
+  "id": "Schedule001",
+  "active": true,
+  "serviceCategory": [
+    {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/service-category",
+          "code": "17",
+          "display": "General Practice"
+        }
+      ],"text": "Atención médica"
+    }
+  ],
+  "specialty": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "394814009",
+          "display": "General Practice"
+        }
+      ],"text": "Medicina General"
+    }
+  ],
+  "name": "Consultas Dr. Salvador Grande",
+  "actor": [
+    {
+      "reference": "PractitionerRole/practitionerRole001",
+      "type": "PractitionerRole", 
+      "display": "Dr. Salvador Grande"
+    },
+    {
+        "reference": "Location/location001",
+        "display": "Centro de consultas"
+    }
+  ]
+}

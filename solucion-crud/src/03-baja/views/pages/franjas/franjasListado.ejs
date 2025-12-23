@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+    <%- include("../../partials/head.ejs") %>
+    <title>Ejercicio CRUD</title>
+    <link rel="stylesheet" href="../../css/main.css">
+    <link rel="stylesheet" href="../../css/franjas.css">
+</head>
+<body>
+    <%- include("../../partials/cabecera.ejs", { titulo: "Franjas Disponibles" }) %>
+    <%- include("../../partials/menu.ejs") %>
+    <main class="contenido-principal contenido-franjas">
+        <ul class="lista-franjas">
+            <% franjas.forEach( function(franja) { %>
+                <li class="lista-franjas__item">
+                    <p>De <%= franja.inicio %> a <%= franja.fin %></p>
+                    <a href="/Franjas/baja/<%= franja.id %>">
+                        <button class="lista-franjas__boton" id="<%= franja.id %>">Borrar</button>
+                    </a>             
+                </li>
+            <% }); %>
+        </ul>
+        <p class="agregar-franja"><a class="agregar-franja__enlace" href="/Franjas/alta">Agregar Franja</a></p>
+        
+    </main>
+</body>
+</html>

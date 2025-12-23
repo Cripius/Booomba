@@ -1,0 +1,34 @@
+{
+  "resourceType": "Appointment",
+  "id": "Appointment001",
+  "status": "booked", 
+  "description": "Revisión anual",
+  "slot": [
+    {
+      "reference": "Slot/Slot001"
+    }
+  ],
+  "participant": [
+    {
+      "actor": {
+        "reference": "Patient/patient001",
+        "display": "Severo Doliente"
+      },
+      "status": "accepted"
+    },
+    {
+      "actor": {
+        "reference": "PractitionerRole/practitionerRole001",
+        "display": "Dr. Salvador Grande"
+      },
+      "status": "accepted"
+    },
+    {
+      "actor": {
+        "reference": "Location/location001",
+        "display": "Centro de consultas"
+      },
+      "status": "accepted"
+    }
+  ]
+}

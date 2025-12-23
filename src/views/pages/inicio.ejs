@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <link rel="stylesheet" href="../../../css/main.css">
+    <link rel="stylesheet" href="../../../css/boton.css">
+</head>
+<body>
+    <%- include("../partials/cabecera.ejs", { titulo: "Inicio" }) %>
+    <main class="contenido-principal contenido-inicio">
+        <div class="parcial parcial-primero">
+            <a href="/Tension/iniciarToma">
+                <button class="rectangular-button">Toma tensión</button>
+            </a>
+        </div>
+        <div class="parcial parcial-segundo">
+            <a href="/Tension/datos">
+                <button class="rectangular-button">Mostrar datos registrados</button>
+            </a>
+        </div> 
+        
+    </main>
+</body>
+</html>
