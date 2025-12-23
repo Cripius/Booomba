@@ -37,32 +37,44 @@ const tensionController = {
         if(sys3>0){
             datos = {
                 id: `${id}-3`,
-                sys: Math.round((sys1 + sys2 + sys3) / 3), // Math.round quita decimales
-                dia: Math.round((dia1 + dia2 + dia3) / 3),
-                pul: Math.round((pul1 + pul2 + pul3) / 3)
+                sys_1: sys1,
+                dia_1: dia1,
+                pul_1: pul1,
+                sys_2: sys2,
+                dia_2: dia2,
+                pul_2: pul2,
+                sys_3: sys3,
+                dia_3: dia3,
+                pul_3: pul3,
+                sys_media: Math.round((sys1 + sys2 + sys3) / 3), // Math.round quita decimales
+                dia_media: Math.round((dia1 + dia2 + dia3) / 3),
+                pul_media: Math.round((pul1 + pul2 + pul3) / 3)
             };
         }
         else if (sys2>0){
             datos = {
                 id: `${id}-2`,
-                sys: Math.round((sys1 + sys2) / 2),
-                dia: Math.round((dia1 + dia2) / 2),
-                pul: Math.round((pul1 + pul2) / 2)
+                sys_1: sys1,
+                dia_1: dia1,
+                pul_1: pul1,
+                sys_2: sys2,
+                dia_2: dia2,
+                pul_2: pul2,
+                sys_media: Math.round((sys1 + sys2) / 2),
+                dia_media: Math.round((dia1 + dia2) / 2),
+                pul_media: Math.round((pul1 + pul2) / 2)
             };
         }
         else {
             datos = {
                 id: `${id}-1`,
-                sys: sys1,
-                dia: dia1,
-                pul: pul1
+                sys_media: sys1,
+                dia_media: dia1,
+                pul_media: pul1
             };
         }
-        tensionModel.altaTension(datos);
-        res.redirect("/Tension/tomaTension/validacion/<%= id %>");
-        },
-        muestraValidacionTomaTension: (req, res) => {
-        res.render('pages/tension/validacionTomaTension.ejs');
+        // tensionModel.altaTension(datos);
+        res.render('pages/tension/validacionTomaTension.ejs', {datos: datos});
         }
     }       
 module.exports = tensionController;

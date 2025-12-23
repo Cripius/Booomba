@@ -13,7 +13,7 @@ router.get("/tomaTension/:id", controller.muestraTomaTension);
 
 router.post("/tomaTension/:id", controller.procesaDatosFormulario);
 
-router.get("/tomaTension/validacion/:id", controller.muestraValidacionTomaTension);
+// router.get("/tomaTension/validacion/:id", controller.muestraValidacionTomaTension);
 
 router.get("/datos", controller.muestraDataTension);
 
