@@ -18,7 +18,7 @@ const tensionController = {
         const datos = tensionModel.obtieneTension();
         res.render('pages/tension/dataTension.ejs', {datos: datos});
     },
-    procesaFormularioTension: (req, res) => {
+    procesaDatosFormulario: (req, res) => {
         const id = req.params.id;
         //Number() convierte a int, y si viene vacío lo convierte a 0
         const sys1 = Number(req.body.tension_sys_1);
@@ -59,7 +59,10 @@ const tensionController = {
             };
         }
         tensionModel.altaTension(datos);
-        res.redirect("/");
+        res.redirect("/Tension/tomaTension/validacion/<%= id %>");
+        },
+        muestraValidacionTomaTension: (req, res) => {
+        res.render('pages/tension/validacionTomaTension.ejs');
         }
     }       
 module.exports = tensionController;
