@@ -5,6 +5,6 @@ const controller = require("../controllers/bombaController.js");
 
 // Rutas
 
-// router.get("/iniciarToma", controller.iniciarToma);
+router.get("/", controller.muestraBomba);
 
 module.exports = router;
