@@ -2,10 +2,10 @@
 // Gestor de rutas principal
 const express = require("express");
 const router = express.Router();
-const tensionRouter = require('./tensionRouter');
+const bombaRouter = require('./bombaRouter');
 
 //Intermediario para usar 
-router.use("/Tension", tensionRouter);
+router.use("/Bomba", bombaRouter);
 
 // Ruta raíz /
 router.get("/", (req, res) => {
