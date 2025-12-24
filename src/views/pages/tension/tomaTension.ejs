@@ -16,9 +16,8 @@
             <form class="formulario" action="/Tension/tomaTension/<%= id %>" method="POST">
 
                 <% for(let i=1; i<= 3; i++){ %> 
-                <div class="formulario-ventana_secciones" 
-                    id="seccion_toma_<%= i %>"
-                    style="<%= i > 1 ? 'display: none;' : '' %>">
+                <div class="formulario-ventana_secciones <%= i > 1 ? 'seccion-oculta' : '' %>" 
+                    id="seccion_toma_<%= i %>">
                         <div class="formulario-ventana_seccion">
                             <label for="tension_sys_<%=i%>">Sístole</label>
                             <input type="text" id="tension_sys_<%=i%>" name="tension_sys_<%=i%>">
@@ -48,7 +47,7 @@
                     return;
                 }
                 const filaAntigua = document.getElementById(`seccion_toma_${tomaActual}`)
-                filaAntigua.classList.add("seccion_oculta");
+                filaAntigua.classList.add("seccion_translucida");
                 tomaActual++;
                 if (tomaActual <= 3) {
                     const siguienteFila = document.getElementById(`seccion_toma_${tomaActual}`);
