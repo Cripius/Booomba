@@ -7,17 +7,20 @@
     font-weight: 400;
 }
 
-/* Opcional: una clase para sacudir la pantalla */
-.shake {
-    animation: shake 0.5s;
-}
 
-@keyframes shake {
+@keyframes shake-animation {
     0% { transform: translate(1px, 1px) rotate(0deg); }
     10% { transform: translate(-1px, -2px) rotate(-1deg); }
     30% { transform: translate(3px, 2px) rotate(0deg); }
     50% { transform: translate(-1px, 2px) rotate(-1deg); }
     100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+.shake {
+    animation: shake-animation 0.5s;
+}
+.shake-error {
+    animation: shake-animation 0.5s; /* Duración de medio segundo */
+    animation-iteration-count: 1;
 }
 .contenido-principal{
     height: 100vh;

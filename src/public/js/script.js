@@ -2,6 +2,8 @@
 const preguntas = [
     { titulo: "Primera pregunta", opciones: ["Azul", "Verde", "Rojo", "Amarillo"], correcta: 0 },
     { titulo: "Segunda pregunta", opciones: ["Azul", "Verde", "Rojo", "Amarillo"], correcta: 1 },
+    { titulo: "Tercera pregunta", opciones: ["Azul", "Verde", "Rojo", "Amarillo"], correcta: 1 },
+    { titulo: "Cuarta pregunta", opciones: ["Azul", "Verde", "Rojo", "Amarillo"], correcta: 1 },
 ];
 
 let indiceActual = 0;
@@ -33,43 +35,57 @@ function verificarRespuesta(seleccion) {
     const modelo3D = document.getElementById('bomba-3d');
 
     if (seleccion === preguntas[indiceActual].correcta) {
-        alert("¡Cable correcto!");
+        // --- LÓGICA DE VICTORIA ---
         indiceActual++;
+        
         if (indiceActual < preguntas.length) {
+            alert("¡Cable correcto! Sigamos...");
             cargarPregunta();
         } else {
-            alert("¡BOMBA DESACTIVADA!");
+            // ¡ESTO ES LO QUE BUSCABAS!
+            alert("¡SISTEMA DESACTIVADO! Misión cumplida.");
+            window.location.href = "/"; // Cambia esto por el nombre de tu página de éxito
         }
+        
     } else {
+        // --- LÓGICA DE FALLO (TEMBLOR) ---
+        document.body.classList.add('shake-error');
+        
+        // Quitamos la clase del temblor corto para que pueda repetirse
+        setTimeout(() => {
+            document.body.classList.remove('shake-error');
+        }, 2000);
+
         vidas--;
         document.getElementById('contador-vidas').innerText = vidas;
         
         if (vidas <= 0) {
             // --- LÓGICA DE EXPLOSIÓN ---
-            
-            // 1. Mostrar la animación y poner el GIF (añade un timestamp para que el GIF empiece de cero)
             explosionDiv.style.backgroundImage = "url('images/gif/explosion.gif?a=" + Math.random() + "')";
             explosionDiv.style.display = "block";
             
-            // qUitamos la bomba porq ha explotado
             if(modelo3D) modelo3D.style.visibility = "hidden";
-            
 
-            document.body.classList.add('shake');
+            // Temblor infinito mientras explota
+            document.body.style.animation = "shake-animation 0.2s infinite";
 
-            
             setTimeout(() => {
                 alert("¡BOOOOMBA!");
-                alert("Volver a empezar")
-                location.reload(); 
-            }, 2000); // 2 segundos de margen para ver la explosión
+                window.location.href = "/";
+            }, 2000);
 
         } else {
-            alert("Uy uy uy... Cable incorrecto.");
+            alert("¡ERROR! La bomba se vuelve inestable... te quedan " + vidas + " vidas.");
             
-            if (indiceActual < preguntas.length) {
-                cargarPregunta();
-            }
+            // // Pasamos a la siguiente aunque falle para no estancarse
+            // indiceActual++;
+            // if (indiceActual < preguntas.length) {
+            //     cargarPregunta();
+            // } else {
+            //     // Si falla la última y le quedan vidas, también explota o redirige a "derrota"
+            //     alert("Demasiados fallos al final...");
+            //     location.reload();
+            // }
         }
     }
 }
