@@ -6,6 +6,19 @@
     font-family: 'Montserrat';
     font-weight: 400;
 }
+
+/* Opcional: una clase para sacudir la pantalla */
+.shake {
+    animation: shake 0.5s;
+}
+
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
 .contenido-principal{
     height: 100vh;
     .indicador-vidas{
@@ -39,13 +52,6 @@
     border-radius: 10px;
 }
 
-.bomba-3d{
-    width: 40%;
-    height: 100%; /* Dale una altura fija para probar */
-    max-height: 450px;
-    background-color: transparent; /* Color de fondo para saber si el componente está ahí */
-}
-
 /* Estilo del inicio */
 .contenido-inicio{
     background-color: lightcoral;
@@ -65,4 +71,27 @@
         padding: 1rem;
         border-radius: 10px;
     }
+}
+/* para eñ gif */
+
+.ventana-derecha{
+    width: 40%;
+    height: 100%; /* Dale una altura fija para probar */
+    max-height: 450px;
+    background-color: transparent; /* Color de fondo para saber si el componente está ahí */
+    justify-items: center;
+    .bomba-3d{
+        height: 100%;
+    }
+}
+
+#explosion-animacion {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-size: 900px;
+    background-repeat: no-repeat;
+    background-position: top;
+    display: none; /* Oculto por defecto */
+    pointer-events: none; /* Para que no interfiera con clics */
 }

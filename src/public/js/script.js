@@ -29,22 +29,47 @@ function cargarPregunta() {
 
 // VALIDACIÓN
 function verificarRespuesta(seleccion) {
+    const explosionDiv = document.getElementById('explosion-animacion');
+    const modelo3D = document.getElementById('bomba-3d');
+
     if (seleccion === preguntas[indiceActual].correcta) {
-        alert("¡Cable correcto! Vamos a la siguiente pregunta");
+        alert("¡Cable correcto!");
         indiceActual++;
         if (indiceActual < preguntas.length) {
-        cargarPregunta(); // Cambia a la siguiente sin recargar
+            cargarPregunta();
         } else {
-        alert("¡BOMBA DESACTIVADA!");
+            alert("¡BOMBA DESACTIVADA!");
         }
-        } else {
+    } else {
         vidas--;
         document.getElementById('contador-vidas').innerText = vidas;
+        
         if (vidas <= 0) {
-        alert("¡BOOOOOOOOMBA");
-        location.reload(); // Reinicia el juego
+            // --- LÓGICA DE EXPLOSIÓN ---
+            
+            // 1. Mostrar la animación y poner el GIF (añade un timestamp para que el GIF empiece de cero)
+            explosionDiv.style.backgroundImage = "url('images/gif/explosion.gif?a=" + Math.random() + "')";
+            explosionDiv.style.display = "block";
+            
+            // qUitamos la bomba porq ha explotado
+            if(modelo3D) modelo3D.style.visibility = "hidden";
+            
+
+            document.body.classList.add('shake');
+
+            
+            setTimeout(() => {
+                alert("¡BOOOOMBA!");
+                alert("Volver a empezar")
+                location.reload(); 
+            }, 2000); // 2 segundos de margen para ver la explosión
+
         } else {
-        alert("Uy uy uy...");
+            alert("Uy uy uy... Cable incorrecto.");
+            
+            if (indiceActual < preguntas.length) {
+                cargarPregunta();
+            }
         }
     }
 }
