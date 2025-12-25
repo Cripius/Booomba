@@ -44,7 +44,7 @@ function verificarRespuesta(seleccion) {
         } else {
             // ¡ESTO ES LO QUE BUSCABAS!
             alert("¡SISTEMA DESACTIVADO! Misión cumplida.");
-            window.location.href = "/"; // Cambia esto por el nombre de tu página de éxito
+            window.location.href = "/Bomba/desactivada"; // Cambia esto por el nombre de tu página de éxito
         }
         
     } else {

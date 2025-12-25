@@ -7,4 +7,6 @@ const controller = require("../controllers/bombaController.js");
 
 router.get("/", controller.muestraBomba);
 
+router.get("/desactivada", controller.muestraDesactivacion);
+
 module.exports = router;

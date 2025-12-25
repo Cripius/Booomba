@@ -5,7 +5,11 @@
 const bombaController = {
     muestraBomba: (req, res) => {
         res.render('pages/bomba/bomba.ejs');
+    },
+    muestraDesactivacion: (req, res) => {
+        res.render('pages/bomba/desactivacion.ejs');
     }
+
     
 
 
