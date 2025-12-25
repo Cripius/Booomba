@@ -12,11 +12,12 @@
             <div class="contenido">
                 <div class="ventana-preguntas">
                     <!--  -->
-                    <div id="ventana-bomba">
+                    <div class="ventana-bomba" id="ventana-bomba">
                     <!-- Aquí pondría las vidas como tres corazoncitos -->
-                        <div id="pantalla-pregunta">
-                            <h2 id="texto-pregunta">Cargando pregunta...</h2>
-                            <div id="contenedor-cables"></div>
+                        <div class="pantalla-pregunta" id="pantalla-pregunta">
+                            <h2  class="texto-pregunta" id="texto-pregunta">Cargando pregunta...</h2>
+                            <div class="contenedor-cables" id="contenedor-cables">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -24,12 +25,13 @@
                     <div id="explosion-animacion"></div>
                     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
                 <model-viewer 
-                    src="/models/bomba_4.glb" 
+                    src="/models/bomba_5.glb" 
                     class="bomba-3d"
                     id="bomba-3d"
                     camera-controls 
-                    shadow-intensity="1"
-                    auto-rotate>
+                    shadow-intensity="2"
+                    auto-rotate
+                    orientation="0 -90deg 180deg">
                 </model-viewer>
                 </div>
             

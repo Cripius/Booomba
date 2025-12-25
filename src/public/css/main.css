@@ -3,8 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Montserrat';
-    font-weight: 400;
+    font-family: "Courier New", Courier, monospace;
 }
 
 
@@ -23,17 +22,21 @@
     animation-iteration-count: 1;
 }
 .contenido-principal{
+    text-align: center;
     height: 100vh;
+    /* background-color: black; */
+    background-image: url('/images/background/fondo_papel.jpg');
+        background-size: cover;
+        /* background-position: center; */
     .indicador-vidas{
         height: 8%;
         display: flex;
         align-items: center;
-        background-color: lightcoral;
+        background-color: #532e32cc;
         padding: 1rem;
     }
     .contenido{
         height: 92%;
-        background-color: black;
         padding: 1rem;
         display: flex;
         flex-direction: row;
@@ -43,16 +46,62 @@
     }
 }
 .ventana-preguntas{
-    background-color: gray;
+    /* background-color:#532e32cc; */
+    background-image: url("/images/background/papel.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
     min-height: 400px;
     height: 80%;
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 60%;
-    margin: 2rem;
+    margin-left: 2rem;
     padding: 1rem;
     border-radius: 10px;
+}
+.ventana-bomba{
+    width: 100%;
+    height: 100%;
+    
+    
+    .pantalla-pregunta{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        .texto-pregunta{
+            text-align: center;
+        }
+        .contenedor-cables{
+            width: 90%;
+            max-width: 700px;
+            height: 60%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            background-image: url('/images/background/cables2.png'); 
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .contenedor-cables button{
+            width: 100%;
+            border: none;
+            background-color: transparent;
+            cursor: url('/images/icons/alicates.png'), pointer;
+            /* background-color: rgba(255, 255, 255, 0.26); */
+        }
+        contenedor-cables button:active{
+            cursor: url('/images/icons/alicates_2.png'), pointer;
+        }
+        .contenedor-cables button:hover{
+            background-color: transparent;
+            }
+    }
 }
 
 /* Estilo del inicio */
